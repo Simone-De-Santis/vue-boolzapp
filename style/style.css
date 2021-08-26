@@ -1,3 +1,15 @@
-h1 {
-  color: red;
+body {
+  /* background-color: brown; */
+}
+.my-layout {
+  border: 1px solid black;
+}
+.contact-img {
+  height: 35px;
+}
+.bkg-1 {
+  background-color: #eaeaea;
+}
+.bkg-2 {
+  background-color: #8edafc;
 }
