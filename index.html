@@ -82,10 +82,13 @@
             <header class="bg-light-gray flex-shrink-0 d-flex justify-content-between">
               <div class="media">
                 <figure>
-                  <img src="img/avatar_2.jpg" alt="Marco Lanci" />
+                  <img
+                    :src="`img/avatar${contacts[currentContact].avatar}.jpg`"
+                    alt="Marco Lanci"
+                  />
                 </figure>
                 <div class="h6 media-text">
-                  <div>Marco Lanci</div>
+                  <div>{{contacts[currentContact].name}}</div>
                   <div class="media-secondary-text fw-light">
                     <small>Ultimo accesso oggi alle</small>
                   </div>
