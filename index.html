@@ -61,7 +61,11 @@
             <!-- Users list -->
             <section class="flex-grow-1 overflow-auto bg-white">
               <ul class="m-0 p-0">
-                <li class="media" v-for="contact in contacts">
+                <li
+                  class="media"
+                  v-for="(contact, index) in contacts"
+                  @click="setCurrentContact(index)"
+                >
                   <figure>
                     <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name" />
                   </figure>
@@ -96,16 +100,13 @@
             <!-- Chat messages -->
             <div class="flex-grow-1 overflow-auto bg-chat-image">
               <ul>
-                <li class="message-container p-3 sent">
+                <li
+                  v-for="(message,index) in contacts[currentContact].messages"
+                  :class="`message-container p-3 ${message.status}`"
+                >
                   <div class="message p-2 rounded-3">
-                    <p>Hai portato a spasso il cane?</p>
-                    <time datetime="2021-08-03T09:53">10/01/2020 - 09:53</time>
-                  </div>
-                </li>
-                <li class="message-container p-3 received">
-                  <div class="message p-2 rounded-3">
-                    <p>Sì!</p>
-                    <time datetime="2021-08-03T10:07">10/01/2020 - 10:07</time>
+                    <p>{{message.message}}</p>
+                    <time datetime="2021-08-03T09:53">{{message.date}}</time>
                   </div>
                 </li>
               </ul>
