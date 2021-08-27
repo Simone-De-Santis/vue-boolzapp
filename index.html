@@ -18,43 +18,22 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <script
-      src="https://kit.fontawesome.com/83bd2dbeec.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/83bd2dbeec.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   </head>
   <body>
-    <div
-      id="app"
-      class="h-100 d-flex align-items-center justify-content-center"
-    >
+    <div id="app" class="h-100 d-flex align-items-center justify-content-center">
       <main class="container rounded shadow bg-white">
         <div class="row h-100">
           <!-- CONTACTS SECTION -->
-          <section
-            id="sidebar"
-            class="col-4 p-0 h-100 bg-light-gray d-flex flex-column"
-          >
+          <section id="sidebar" class="col-4 p-0 h-100 bg-light-gray d-flex flex-column">
             <!-- User section -->
-            <section
-              class="user-section flex-shrink-0 d-flex justify-content-between"
-            >
+            <section class="user-section flex-shrink-0 d-flex justify-content-between">
               <div class="media">
-                <figure>
-                  <img src="img/avatar_io.jpg" alt="Silvia Rivella" />
-                </figure>
-                <div class="h6 media-text">Silvia Rivella</div>
+                <figure><img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name" /></figure>
+                <div class="h6 media-text">{{user.name}}</div>
               </div>
-              <div
-                class="
-                  w-25
-                  text-muted
-                  d-flex
-                  justify-content-around
-                  align-items-center
-                "
-              >
+              <div class="w-25 text-muted d-flex justify-content-around align-items-center">
                 <i class="fas fa-circle-notch clickable"></i>
                 <i class="fas fa-comment-alt clickable"></i>
                 <i class="fas fa-ellipsis-v clickable"></i>
@@ -77,11 +56,7 @@
             <!-- Search section -->
             <section class="search p-2">
               <i class="fas fa-search text-muted"></i>
-              <input
-                type="text"
-                class="w-100"
-                placeholder="Cerca o inizia una nuova chat..."
-              />
+              <input type="text" class="w-100" placeholder="Cerca o inizia una nuova chat..." />
             </section>
             <!-- Users list -->
             <section class="flex-grow-1 overflow-auto bg-white">
@@ -98,14 +73,9 @@
             </section>
           </section>
           <!-- CHAT SECTION -->
-          <section
-            id="chat"
-            class="col-8 rounded-end d-flex flex-column p-0 h-100 bg-chat-color"
-          >
+          <section id="chat" class="col-8 rounded-end d-flex flex-column p-0 h-100 bg-chat-color">
             <!-- Chat Contact  -->
-            <header
-              class="bg-light-gray flex-shrink-0 d-flex justify-content-between"
-            >
+            <header class="bg-light-gray flex-shrink-0 d-flex justify-content-between">
               <div class="media">
                 <figure>
                   <img src="img/avatar_2.jpg" alt="Marco Lanci" />
@@ -117,15 +87,7 @@
                   </div>
                 </div>
               </div>
-              <div
-                class="
-                  me-3
-                  d-flex
-                  text-muted
-                  align-items-center
-                  justify-content-around
-                "
-              >
+              <div class="me-3 d-flex text-muted align-items-center justify-content-around">
                 <i class="fas fa-search ms-3"></i>
                 <i class="fas fa-paperclip ms-3"></i>
                 <i class="fas fa-ellipsis-v ms-3"></i>
@@ -155,21 +117,10 @@
                   <i class="far fa-smile fa-2x text-muted clickable"></i>
                 </div>
                 <div class="col-10">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Scrivi un messaggio"
-                  />
+                  <input type="text" class="form-control" placeholder="Scrivi un messaggio" />
                 </div>
                 <div class="col-1">
-                  <i
-                    class="
-                      fas
-                      fa-chevron-circle-right fa-2x
-                      text-muted
-                      clickable
-                    "
-                  ></i>
+                  <i class="fas fa-chevron-circle-right fa-2x text-muted clickable"></i>
                 </div>
               </div>
             </footer>
