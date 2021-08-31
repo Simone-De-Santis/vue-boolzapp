@@ -110,7 +110,15 @@ const app = new Vue({
       };
       this.contacts[this.currentContact].messages.push(newMessage);
       this.newText = "";
+      setTimeout(() => {
+        const newMessageReceived = {
+          date: dayjs().format("DD/MM/YYYY HH/mm/ss"),
+          message: "ok",
+          status: "received",
+        };
+        this.contacts[this.currentContact].messages.push(newMessageReceived);
 
+      }, 1000);
     },
   },
 });
