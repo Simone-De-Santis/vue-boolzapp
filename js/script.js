@@ -118,9 +118,20 @@ const app = new Vue({
           status: "received",
         };
         this.contacts[this.currentContact].messages.push(newMessageReceived);
-
       }, 1000);
     },
 
+
+    // dobbiamo controllare se cio' che è scritto dall'utente è presente nei contatti e se lo è stampare solo se presente
+
+    isVisible(nameContact) {
+      var result = false;
+      if (this.userSearch == "") {
+        result = true;
+      } else {
+        result = nameContact.trim().toLowerCase().includes(this.userSearch.toLowerCase());
+      }
+      return result
+    },
   },
 });
