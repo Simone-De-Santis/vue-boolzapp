@@ -101,5 +101,16 @@ const app = new Vue({
     setCurrentContact(index) {
       this.currentContact = index;
     },
+    sendMessage() {
+      // if (!this.newMessage) return;
+      const newMessage = {
+        date: dayjs().format("DD/MM/YYYY HH/mm/ss"),
+        message: this.newText,
+        status: "sent",
+      };
+      this.contacts[this.currentContact].messages.push(newMessage);
+      this.newText = "";
+
+    },
   },
 });
