@@ -7,6 +7,7 @@ const app = new Vue({
   data: {
     currentContact: 0,
     newText: "",
+    userSearch: "",
     user: {
       name: "Nome Utente",
       avatar: "_io",
@@ -102,7 +103,7 @@ const app = new Vue({
       this.currentContact = index;
     },
     sendMessage() {
-      // if (!this.newMessage) return;
+      if (!this.newText) return;
       const newMessage = {
         date: dayjs().format("DD/MM/YYYY HH/mm/ss"),
         message: this.newText,
@@ -120,5 +121,6 @@ const app = new Vue({
 
       }, 1000);
     },
+
   },
 });

@@ -50,7 +50,8 @@
           <!-- Search section -->
           <section class="search p-2">
             <i class="fas fa-search text-muted"></i>
-            <input type="text" class="w-100" placeholder="Cerca o inizia una nuova chat..." />
+            <input @keyup.enter="" v-model.trim="userSearch" type="text" class="w-100"
+              placeholder="Cerca o inizia una nuova chat..." />
           </section>
           <!-- Users list -->
           <section class="flex-grow-1 overflow-auto bg-white">
